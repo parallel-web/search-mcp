@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "account_id": "aceab98f1a2fc658ed4e20bc307fa65a",
+  "name": "search-mcp-proxy",
+  "main": "main.ts",
+  "compatibility_date": "2025-09-10",
+  "observability": { "logs": { "enabled": true } },
+  "env": { "dev": { "routes": [] } },
+  "routes": [{ "custom_domain": true, "pattern": "search-mcp.parallel.ai" }]
+}
