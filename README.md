@@ -6,6 +6,16 @@ The **Parallel Search MCP** allows using Parallel Search API from within any MCP
 
 The official installation instructions can be found [here](https://docs.parallel.ai/integrations/mcp/installation).
 
+```json Search MCP
+{
+  "mcpServers": {
+    "Parallel Search MCP": {
+      "url": "https://search-mcp.parallel.ai/mcp"
+    }
+  }
+}
+```
+
 ## Running locally
 
 <details><summary>Running locally</summary>
