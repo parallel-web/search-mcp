@@ -25,7 +25,7 @@ export default {
       isLoginRequired: false,
       oauthProviderPathPrefix: "/getKeys",
       oauthProviderHost: "platform.parallel.ai",
-      scope: "keys:read",
+      scope: "key:read",
     }
   ),
 };
