@@ -32,6 +32,29 @@ codex mcp add parallel-search --url https://search.parallel.ai/mcp
 
 Start a new Codex session and run `/mcp` to check the connection. See the [Codex MCP guide](https://developers.openai.com/codex/mcp/) for configuration options.
 
+### OpenCode
+
+Merge this into your project's `opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "parallel-search": {
+      "type": "remote",
+      "url": "https://search.parallel.ai/mcp",
+      "oauth": false
+    }
+  }
+}
+```
+
+Restart OpenCode and run `opencode mcp list` to check the connection. See the [OpenCode MCP guide](https://opencode.ai/docs/en/mcp-servers) for details.
+
+### OpenClaw
+
+Follow the [OpenClaw setup guide](https://docs.openclaw.ai/tools/parallel-search) to install the Parallel plugin, then set `tools.web.search.provider` to `parallel-free`. No Parallel account or API key is needed.
+
 ### Cursor, VS Code, and other clients
 
 Use this remote MCP server URL:
@@ -78,7 +101,7 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 ## About this repo
 
-This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and small Claude and Cursor plugin configurations. Both use the same `.mcp.json`. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, and Cursor plugin configurations. All three use the same `.mcp.json`. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
 
 To try the Claude plugin from a local checkout:
 
