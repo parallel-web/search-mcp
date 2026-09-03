@@ -1,0 +1,90 @@
+<img src="https://assets.parallel.ai/dark-parallel-avatar-270.svg" alt="Parallel" width="48" />
+
+# Parallel Search MCP
+
+**Free web search for your coding agent.**
+
+Find current documentation, check facts, and read web pages without leaving your agent. No account or API key needed to get started.
+
+[Install in Cursor](https://cursor.com/en/install-mcp?name=Parallel%20Search%20MCP&config=eyJ1cmwiOiJodHRwczovL3NlYXJjaC5wYXJhbGxlbC5haS9tY3AifQ==) · [All clients](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) · [Documentation](https://docs.parallel.ai/integrations/mcp/search-mcp)
+
+## Install
+
+Choose your client. You only need one of these options.
+
+### Claude Code
+
+Run this in the project where you want to use Parallel:
+
+```bash
+claude mcp add --transport http --scope project parallel-search https://search.parallel.ai/mcp
+```
+
+Start a new Claude Code session, approve the MCP connection if prompted, and run `/mcp` to check that `parallel-search` is connected. The free endpoint does not require a Parallel login.
+
+### Codex
+
+```bash
+codex mcp add parallel-search --url https://search.parallel.ai/mcp
+```
+
+Start a new Codex session and run `/mcp` to check the connection. See the [Codex MCP guide](https://developers.openai.com/codex/mcp/) for configuration options.
+
+### Cursor, VS Code, and other clients
+
+Use this remote MCP server URL:
+
+```text
+https://search.parallel.ai/mcp
+```
+
+Select HTTP or Streamable HTTP if your client asks for a transport. Follow the [client-specific instructions](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) for the right settings file and format.
+
+## Try it
+
+Ask your agent:
+
+> Use Parallel to find the official FastAPI docs for response models. Show me a small example and link to the source.
+
+Or try:
+
+> Use Parallel to check the latest stable Node.js release and its release notes. Cite the official sources.
+
+> Use Parallel to read https://modelcontextprotocol.io/introduction and explain how MCP connects an agent to tools.
+
+Your agent can use two tools:
+
+| Tool | What it does |
+| --- | --- |
+| `web_search` | Searches the web and returns relevant excerpts with source links. |
+| `web_fetch` | Reads specific URLs and returns page content for your agent to use. |
+
+Search results often contain enough information to answer. Your agent can fetch a page when it needs more detail.
+
+## Free access and higher limits
+
+The free endpoint is rate-limited. For higher limits, connect a Parallel account using an API key or OAuth. Authenticated usage follows your account's pricing and limits. See the [authentication instructions](https://docs.parallel.ai/integrations/mcp/search-mcp#installation).
+
+Parallel hosts the service. Search queries and requested URLs are sent to Parallel under the [Customer Terms](https://parallel.ai/customer-terms) and [Privacy Policy](https://parallel.ai/privacy-policy).
+
+## Troubleshooting
+
+- **Tools aren't showing up:** start a new agent session and check its MCP connection list. Confirm the URL is `https://search.parallel.ai/mcp`.
+- **Asked to log in to Parallel:** check the URL. `/mcp` supports free access; `/mcp-oauth` requires authentication. Approving an MCP connection in your client is separate from logging in to Parallel.
+- **Hit a rate limit:** wait before retrying, or connect your Parallel account for higher limits.
+- **Still stuck:** check the [setup guide](https://docs.parallel.ai/integrations/mcp/search-mcp#troubleshooting) or [open an issue](https://github.com/parallel-web/search-mcp/issues). Include your client, version, and error message. Leave out API keys and other credentials.
+
+## About this repo
+
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and a small Claude plugin configuration. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+
+To try the Claude plugin from a local checkout:
+
+```bash
+git clone https://github.com/parallel-web/search-mcp.git
+claude --plugin-dir ./search-mcp
+```
+
+Use either the plugin or the direct MCP setup above to avoid adding the same server twice. The plugin is named `parallel-search`; Parallel's broader [CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills) is a separate project.
+
+The files in this repo are [MIT licensed](LICENSE). Hosted service usage is covered by the Customer Terms linked above.

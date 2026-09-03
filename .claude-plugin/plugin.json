@@ -1,0 +1,13 @@
+{
+  "name": "parallel-search",
+  "version": "0.1.0",
+  "description": "Search the web and read pages from your coding agent. Free to start, no API key needed.",
+  "author": {
+    "name": "Parallel Web Systems",
+    "url": "https://parallel.ai"
+  },
+  "homepage": "https://docs.parallel.ai/integrations/mcp/search-mcp",
+  "repository": "https://github.com/parallel-web/search-mcp",
+  "license": "MIT",
+  "keywords": ["search", "web", "mcp", "parallel"]
+}
