@@ -12,6 +12,8 @@ Find current documentation, check facts, and read web pages without leaving your
 
 Choose your client. You only need one of these options.
 
+The `parallel-search` configuration connects your agent to Parallel's free, rate-limited Search MCP. No Parallel CLI installation or account is required. Parallel's broader [`parallel` CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills) provides CLI-based search, research, and enrichment as a separate project.
+
 ### Claude Code
 
 Run this in the project where you want to use Parallel:
@@ -76,7 +78,7 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 ## About this repo
 
-This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and a small Claude plugin configuration. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and small Claude and Cursor plugin configurations. Both use the same `.mcp.json`. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
 
 To try the Claude plugin from a local checkout:
 
@@ -85,6 +87,6 @@ git clone https://github.com/parallel-web/search-mcp.git
 claude --plugin-dir ./search-mcp
 ```
 
-Use either the plugin or the direct MCP setup above to avoid adding the same server twice. The plugin is named `parallel-search`; Parallel's broader [CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills) is a separate project.
+Use either the plugin or the direct MCP setup above to avoid adding the same server twice.
 
 The files in this repo are [MIT licensed](LICENSE). Hosted service usage is covered by the Customer Terms linked above.

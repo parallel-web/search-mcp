@@ -1,0 +1,13 @@
+{
+  "name": "parallel-search",
+  "version": "0.1.0",
+  "description": "Free web search and page fetching for coding agents. No account or API key required to get started.",
+  "author": {
+    "name": "Parallel Web Systems"
+  },
+  "homepage": "https://docs.parallel.ai/integrations/mcp/search-mcp",
+  "repository": "https://github.com/parallel-web/search-mcp",
+  "license": "MIT",
+  "keywords": ["search", "web", "mcp", "parallel"],
+  "mcpServers": "./.mcp.json"
+}
