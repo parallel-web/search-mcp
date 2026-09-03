@@ -6,13 +6,33 @@
 
 Find current documentation, check facts, and read web pages without leaving your agent. No account or API key needed to get started.
 
-[Install in Cursor](https://cursor.com/en/install-mcp?name=Parallel%20Search%20MCP&config=eyJ1cmwiOiJodHRwczovL3NlYXJjaC5wYXJhbGxlbC5haS9tY3AifQ==) · [All clients](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) · [Documentation](https://docs.parallel.ai/integrations/mcp/search-mcp)
+## Ask your agent to install
 
-## Install
+Copy this into your coding agent:
+
+```text
+Install Parallel's free Search MCP in the coding agent I'm using now.
+Identify your client and use its native MCP setup instructions:
+https://docs.parallel.ai/integrations/mcp/search-mcp
+
+Server name: parallel-search
+Server URL: https://search.parallel.ai/mcp
+Transport: Streamable HTTP
+Authentication: none. No account, API key, or Parallel CLI is needed.
+
+Preserve existing settings and reuse any connection to this endpoint.
+Tell me if a restart or approval is required.
+
+Once connected, check that web_search and web_fetch are available.
+Use Parallel to find the official FastAPI response-model documentation
+and return a source link. Report anything you couldn't verify.
+```
+
+[Install in Cursor](https://cursor.com/en/install-mcp?name=Parallel%20Search%20MCP&config=eyJ1cmwiOiJodHRwczovL3NlYXJjaC5wYXJhbGxlbC5haS9tY3AifQ==) · [Install in VS Code](https://insiders.vscode.dev/redirect/mcp/install?name=Parallel%20Search%20MCP&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fsearch.parallel.ai%2Fmcp%22%7D) · [Manual setup](#manual-setup) · [Documentation](https://docs.parallel.ai/integrations/mcp/search-mcp)
+
+## Manual setup
 
 Choose your client. You only need one of these options.
-
-The `parallel-search` configuration connects your agent to Parallel's free, rate-limited Search MCP. No Parallel CLI installation or account is required. Parallel's broader [`parallel` CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills) provides CLI-based search, research, and enrichment as a separate project.
 
 ### Claude Code
 
@@ -102,6 +122,8 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 ## About this repo
 
 This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, and Cursor plugin configurations. All three use the same `.mcp.json`. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+
+For CLI-based search, research, and enrichment, see the separate [Parallel CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills).
 
 To try the Claude plugin from a local checkout:
 
