@@ -9,7 +9,7 @@ Include what you found, how to reproduce it, and the impact you believe it has. 
 ## Scope
 
 - This repository contains documentation and client configuration only; the search service runs on Parallel's infrastructure.
-- The MCP server's tools (`web_search`, `web_fetch`) are read-only and require no credentials on the free tier. The authenticated endpoint uses OAuth; never share API keys or tokens in issues or reports.
+- The MCP server's tools (`web_search`, `web_fetch`) are read-only, and this plugin is anonymous: it uses no credentials of any kind. Never share Parallel API keys or tokens in issues or reports.
 
 ## Service and data handling
 
