@@ -108,7 +108,9 @@ Search results often contain enough information to answer. Your agent can fetch 
 
 ## Free access and higher limits
 
-The free tier includes both tools with no account or API key, subject to rate limits. For higher limits, connect a Parallel account: point your client at the authenticated endpoint `https://search.parallel.ai/mcp-oauth` (OAuth), or follow the [authentication instructions](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) for API-key setups. Authenticated usage is billed under your account's pricing and limits — see [parallel.ai](https://parallel.ai) for pricing. The tools behave the same on both tiers; only limits and billing differ.
+This plugin is anonymous by design: both tools work with no account, API key, or login, subject to free-tier rate limits. The free tier is intended for personal agents, hobby projects, and exploration.
+
+For higher limits, usage analytics, and production workloads, create an account at [platform.parallel.ai](https://platform.parallel.ai) and connect the **Parallel Search** connector, which signs in with that account. Authenticated usage is billed under your account's pricing and limits — see [parallel.ai](https://parallel.ai) for pricing. Don't add an API key or point this plugin at an authenticated endpoint; the connector handles sign-in natively.
 
 ## Privacy and terms
 
@@ -118,7 +120,7 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 - **Tools aren't showing up:** start a new agent session and check its MCP connection list. Confirm the URL is `https://search.parallel.ai/mcp`.
 - **Asked to log in to Parallel:** check the URL. `/mcp` supports free access; `/mcp-oauth` requires authentication. Approving an MCP connection in your client is separate from logging in to Parallel.
-- **Hit a rate limit:** wait before retrying, or connect your Parallel account for higher limits.
+- **Hit a rate limit:** wait before retrying, or move to an authenticated Parallel account via the Parallel Search connector for higher limits.
 - **Still stuck:** check the [setup guide](https://docs.parallel.ai/integrations/mcp/search-mcp#troubleshooting) or [open an issue](https://github.com/parallel-web/search-mcp/issues). Include your client, version, and error message. Leave out API keys and other credentials.
 
 ## Support and security
@@ -129,7 +131,7 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 ## About this repo
 
-This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, and Cursor plugin configurations. All three use the same `.mcp.json`. The Claude plugin also includes a `setup` skill ([skills/setup/SKILL.md](skills/setup/SKILL.md)) that walks Claude through verifying the connection, troubleshooting, and upgrading to an authenticated Parallel account. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, and Cursor plugin configurations. All three use the same `.mcp.json`. The Claude plugin also includes a setup skill ([skills/parallel-search-setup/SKILL.md](skills/parallel-search-setup/SKILL.md)) that walks Claude through verifying the connection, using the tools well, troubleshooting, and moving to an authenticated Parallel account when higher limits are needed. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
 
 For CLI-based search, research, and enrichment, see the separate [Parallel CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills).
 
