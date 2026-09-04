@@ -112,6 +112,8 @@ This plugin is anonymous by design: both tools work with no account, API key, or
 
 For higher limits, usage analytics, and production workloads, create an account at [platform.parallel.ai](https://platform.parallel.ai) and connect the **Parallel Search** connector, which signs in with that account. Authenticated usage is billed under your account's pricing and limits — see [parallel.ai](https://parallel.ai) for pricing. Don't add an API key or point this plugin at an authenticated endpoint; the connector handles sign-in natively.
 
+Both tiers include the same two tools. Authenticated connections also let you [configure search behavior](https://docs.parallel.ai/integrations/mcp/search-mcp#configure-search-behavior), including search modes, result counts, and domain filters. Anonymous requests ignore these settings.
+
 ## Privacy and terms
 
 Parallel hosts the service. Search queries and requested URLs are sent to Parallel and handled under the [Customer Terms](https://parallel.ai/customer-terms) and [Privacy Policy](https://parallel.ai/privacy-policy). The server only receives what the tools send it — search queries and the URLs you ask it to fetch — and does not read your conversation, files, or other context.
