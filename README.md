@@ -108,7 +108,7 @@ Search results often contain enough information to answer. Your agent can fetch 
 
 ## Free access and higher limits
 
-The free tier includes both tools with no account or API key, subject to rate limits. For higher limits, connect a Parallel account: point your client at the authenticated endpoint `https://search.parallel.ai/mcp-oauth` (OAuth), or follow the [authentication instructions](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) for API-key setups. Authenticated usage is billed under your account's pricing and limits — see [parallel.ai](https://parallel.ai) for pricing. The tools behave the same on both tiers; only limits and billing differ.
+The free tier includes both tools with no account or API key, subject to rate limits. For higher limits, connect a Parallel account: point your client at the authenticated endpoint `https://search.parallel.ai/mcp-oauth` (OAuth), or follow the [authentication instructions](https://docs.parallel.ai/integrations/mcp/search-mcp#installation) for API-key setups. Authenticated usage is billed under your account's pricing and limits. See [parallel.ai](https://parallel.ai) for pricing. Both tiers include the same two tools. Authenticated connections also let you [configure search behavior](https://docs.parallel.ai/integrations/mcp/search-mcp#configure-search-behavior), including search modes, result counts, and domain filters. Anonymous requests ignore these settings.
 
 ## Privacy and terms
 
