@@ -52,6 +52,14 @@ codex mcp add parallel-search --url https://search.parallel.ai/mcp
 
 Start a new Codex session and run `/mcp` to check the connection. See the [Codex MCP guide](https://developers.openai.com/codex/mcp/) for configuration options.
 
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/parallel-web/search-mcp
+```
+
+Restart Gemini CLI and run `/mcp` to check that `parallel-search` is connected. The extension uses Streamable HTTP and requires no Parallel account or API key. If you already configured `parallel-search` manually, that configuration takes precedence over the extension. See the [extension guide](https://geminicli.com/docs/extensions/) for installation and update options.
+
 ### OpenCode
 
 Merge this into your project's `opencode.json`:
