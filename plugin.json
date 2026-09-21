@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "parallel-search",
+  "version": "0.1.0",
+  "description": "Free web search and page fetching through Parallel's hosted MCP. No account or API key required.",
+  "author": {
+    "name": "Parallel Web Systems",
+    "url": "https://parallel.ai"
+  },
+  "homepage": "https://docs.parallel.ai/integrations/mcp/search-mcp",
+  "repository": "https://github.com/parallel-web/search-mcp",
+  "license": "MIT",
+  "keywords": ["search", "web", "mcp", "parallel"]
+}
