@@ -64,7 +64,7 @@ Restart Gemini CLI and run `/mcp` to check that `parallel-search` is connected. 
 
 Hermes already includes Parallel in its native web providers. Choose **Parallel Free (keyless)** in `hermes tools` to use that integration.
 
-This optional package adds a direct connection to Parallel's MCP tools and the bundled setup skill. It leaves Hermes's native web-provider selection unchanged. Install the reviewed package from the [Hermes plugin catalog](https://hermes-agent.nousresearch.com/docs/plugins):
+This optional package adds a direct connection to Parallel's MCP tools and the bundled setup skill. It leaves Hermes's native web-provider selection unchanged. We've submitted it to the [Hermes plugin catalog](https://hermes-agent.nousresearch.com/docs/plugins), and approval is pending. Once it's listed, install and enable it with:
 
 ```bash
 hermes plugins install parallel-search
