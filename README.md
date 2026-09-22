@@ -60,6 +60,21 @@ gemini extensions install https://github.com/parallel-web/search-mcp
 
 Restart Gemini CLI and run `/mcp` to check that `parallel-search` is connected. The extension uses Streamable HTTP and requires no Parallel account or API key. If you already configured `parallel-search` manually, that configuration takes precedence over the extension. See the [extension guide](https://geminicli.com/docs/extensions/) for installation and update options.
 
+### Hermes Agent
+
+Hermes already includes Parallel in its native web providers. Choose **Parallel Free (keyless)** in `hermes tools` to use that integration.
+
+This optional package adds a direct connection to Parallel's MCP tools and the bundled setup skill. It leaves Hermes's native web-provider selection unchanged. We've submitted it to the [Hermes plugin catalog](https://hermes-agent.nousresearch.com/docs/plugins), and approval is pending. Once it's listed, install and enable it with:
+
+```bash
+hermes plugins install parallel-search
+hermes plugins enable parallel-search
+```
+
+Start a new session so Hermes loads the enabled package. Ask Hermes to use the Parallel MCP `web_search` tool to find official documentation, then `web_fetch` to read a page. Use `skills_list` to discover the namespaced `parallel-search-setup` skill. No Parallel account, API key, or CLI is required.
+
+Use either this package or a manually configured connection to `https://search.parallel.ai/mcp` to avoid duplicate MCP tools. Disable or remove the package with `hermes plugins disable parallel-search` or `hermes plugins remove parallel-search`. Update through `hermes plugins update parallel-search`; catalog updates use reviewed commit pins.
+
 ### OpenCode
 
 Merge this into your project's `opencode.json`:
@@ -141,7 +156,7 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 ## About this repo
 
-This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, and Cursor plugin configurations. All three use the same `.mcp.json`. The Claude plugin also includes a setup skill ([skills/parallel-search-setup/SKILL.md](skills/parallel-search-setup/SKILL.md)) that walks Claude through verifying the connection, using the tools well, troubleshooting, and moving to an authenticated Parallel account when higher limits are needed. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, Cursor, Gemini CLI, and Hermes packages. Claude, Codex, and Cursor share `.mcp.json`; Hermes uses the portable Agent Plugins v1 `plugin.json` and `mcp.json` files. Claude and Hermes also load the setup skill ([skills/parallel-search-setup/SKILL.md](skills/parallel-search-setup/SKILL.md)) on demand for connection checks, usage guidance, troubleshooting, and higher-limit options. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
 
 For CLI-based search, research, and enrichment, see the separate [Parallel CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills).
 
