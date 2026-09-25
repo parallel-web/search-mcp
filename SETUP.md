@@ -14,4 +14,4 @@ stays anonymous by design.
 
 Full setup, usage and troubleshooting guidance lives in the
 `parallel-search-setup` skill (`skills/parallel-search-setup/SKILL.md`), which
-Claude loads on demand.
+Hermes loads on demand.
