@@ -34,16 +34,6 @@ and return a source link. Report anything you couldn't verify.
 
 Choose your client. You only need one of these options.
 
-### Claude Code
-
-Run this in the project where you want to use Parallel:
-
-```bash
-claude mcp add --transport http --scope project parallel-search https://search.parallel.ai/mcp
-```
-
-Start a new Claude Code session, approve the MCP connection if prompted, and run `/mcp` to check that `parallel-search` is connected. The free endpoint does not require a Parallel login.
-
 ### Codex
 
 ```bash
@@ -156,17 +146,8 @@ Parallel hosts the service. Search queries and requested URLs are sent to Parall
 
 ## About this repo
 
-This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Claude, Codex, Cursor, Gemini CLI, and Hermes packages. Claude, Codex, and Cursor share `.mcp.json`; Hermes uses the portable Agent Plugins v1 `plugin.json` and `mcp.json` files. Claude and Hermes also load the setup skill ([skills/parallel-search-setup/SKILL.md](skills/parallel-search-setup/SKILL.md)) on demand for connection checks, usage guidance, troubleshooting, and higher-limit options. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
+This is the official GitHub home for Parallel's hosted Search MCP. It contains this guide and Codex, Cursor, Gemini CLI, and Hermes packages. Codex and Cursor share `.mcp.json`; Hermes uses the portable Agent Plugins v1 `plugin.json` and `mcp.json` files and loads the setup skill ([skills/parallel-search-setup/SKILL.md](skills/parallel-search-setup/SKILL.md)) on demand for connection checks, usage guidance, troubleshooting, and higher-limit options. You can suggest documentation fixes and examples here. The search service runs on Parallel's infrastructure; cloning this repo gives you the documentation and configuration files.
 
 For CLI-based search, research, and enrichment, see the separate [Parallel CLI skills plugin](https://github.com/parallel-web/parallel-agent-skills).
-
-To try the Claude plugin from a local checkout:
-
-```bash
-git clone https://github.com/parallel-web/search-mcp.git
-claude --plugin-dir ./search-mcp
-```
-
-Use either the plugin or the direct MCP setup above to avoid adding the same server twice.
 
 The files in this repo are [MIT licensed](LICENSE). Hosted service usage is covered by the Customer Terms linked above.
