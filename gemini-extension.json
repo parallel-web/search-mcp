@@ -1,10 +1,10 @@
 {
   "name": "parallel-search",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Search the web and read pages from your coding agent. Free to start, no API key needed.",
   "mcpServers": {
     "parallel-search": {
-      "httpUrl": "https://search.parallel.ai/mcp"
+      "httpUrl": "https://mcp.parallel.ai/mcp"
     }
   }
 }

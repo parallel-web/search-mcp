@@ -8,21 +8,22 @@ description: >
   Also covers how to use the web_search and web_fetch tools this plugin
   provides.
 metadata:
-  version: "0.1.0"
+  version: "0.1.3"
 ---
 
 # Parallel Search — setup and usage
 
-This plugin connects one remote MCP server at
-`https://search.parallel.ai/mcp`. It provides two tools:
+This plugin connects to `https://mcp.parallel.ai/mcp`. Start with these tools:
 
 - `web_search` — returns ranked results with answer-ready excerpts
 - `web_fetch` — returns token-efficient markdown for specific URLs
 
+The server manages the default tool list, which also includes Decisions.
+
 ## Setup
 
-The endpoint is anonymous. No API key, no OAuth, no environment variables.
-After install, confirm it works rather than assuming:
+The plugin connects without credentials. After installing or updating the
+plugin, start a fresh session and confirm it works:
 
 1. Run a `web_search` call with a simple query (for example,
    `objective: "Find official Parallel Search API documentation"` and
@@ -54,7 +55,8 @@ The anonymous tier is rate limited and intended for personal agents, hobby
 projects, and exploration. Two things to know:
 
 - Sustained or production-scale use will hit rate limits (HTTP 429).
-- Search overrides passed by the caller are ignored for anonymous requests.
+- [Request overrides](https://docs.parallel.ai/integrations/mcp/quickstart#configuration)
+  require an authenticated connection.
 
 ## When the user needs higher limits
 
@@ -63,10 +65,9 @@ or is building a production agent, explain the options rather than retrying
 into the limit:
 
 - Create a Parallel account at https://platform.parallel.ai
-- Connect the **Parallel Search** connector, which signs in with that account
-  and raises limits substantially. Usage is attributed to the account, search
-  overrides are honored, and it can be deployed org-wide. This option depends
-  on the client's connector support.
+- Follow the [sign-in instructions for the client](https://docs.parallel.ai/integrations/mcp/installation).
+  Usage is attributed to the account and authenticated connections can use
+  Research and custom settings.
 - In **Hermes**, use `hermes tools` to select the native **Parallel Paid (API
   key)** provider and follow its credential setup. The native provider is
   separate from this anonymous MCP package. Disable the package if you only
@@ -84,7 +85,7 @@ will change, and never touch unrelated MCP servers.
 | Symptom | Cause | Fix |
 | --- | --- | --- |
 | HTTP 429 | Free-tier rate limit reached | Wait and retry, reduce query volume, or move to an authenticated Parallel account (see above) |
-| HTTP 401 | Requests are reaching the authenticated endpoint (`/mcp-oauth`) instead of `/mcp` | Check that the server URL in the active MCP configuration is `https://search.parallel.ai/mcp` |
+| HTTP 401 | The connection may be using an endpoint or settings that require authentication | For anonymous use, check for the bare `https://mcp.parallel.ai/mcp` URL and remove any custom override header |
 | Tools not listed | Package disabled, server disconnected, or session started before enablement | Check the client's MCP status. In Hermes, run `hermes plugins enable parallel-search` and start a new session; in clients with connector settings, enable Parallel Search for the chat |
 | Duplicate tools | The server was also added manually, so the plugin and the manual entry point at the same endpoint | Keep one and remove the other; tell the user which one you are removing first |
 | Empty or irrelevant results | Query too narrow or too long | Rewrite as two or three shorter queries and pass them together in one call |
