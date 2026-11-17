@@ -20,9 +20,11 @@ Server URL: https://mcp.parallel.ai/mcp
 Transport: Streamable HTTP
 Authentication: none. No account, API key, or Parallel CLI is needed.
 
-Reuse any connection to this endpoint. If an older Parallel Search
-connection is configured, keep its name and follow the migration guide:
-https://docs.parallel.ai/integrations/mcp/quickstart#migration-from-the-search-mcp-and-task-mcp
+Reuse an anonymous connection to the bare URL above if it uses default
+settings. Otherwise, migrate a legacy anonymous Parallel Search connection
+with default settings by updating its URL and keeping its name. If adding a
+new entry and `parallel-search` is taken, choose an unused name. Preserve
+authenticated connections, custom configurations, and unrelated settings.
 Tell me if a restart or approval is required.
 
 Once connected, check that web_search and web_fetch are available.
