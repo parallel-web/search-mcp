@@ -32,11 +32,13 @@ Use Parallel to find the official FastAPI response-model documentation
 and return a source link. Report anything you couldn't verify.
 ```
 
+For an existing Parallel Search connection, follow the [upgrade instructions](#upgrade-an-existing-install) before using an install link.
+
 [Install in Cursor](https://cursor.com/en/install-mcp?name=Parallel%20Search%20MCP&config=eyJ1cmwiOiJodHRwczovL21jcC5wYXJhbGxlbC5haS9tY3AifQ==) · [Install in VS Code](https://insiders.vscode.dev/redirect/mcp/install?name=Parallel%20Search%20MCP&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.parallel.ai%2Fmcp%22%7D) · [Manual setup](#manual-setup) · [Documentation](https://docs.parallel.ai/integrations/mcp/quickstart)
 
 ## Manual setup
 
-Choose your client. You only need one of these options.
+Choose your client. If you already use Parallel Search, follow the [upgrade instructions](#upgrade-an-existing-install). When adding a new manual entry, use an unused server name if the example name is taken.
 
 ### Codex
 
@@ -104,7 +106,7 @@ Select HTTP or Streamable HTTP if your client asks for a transport. Follow the [
 
 ## Upgrade an existing install
 
-Update the package in your client and start a fresh session to refresh the tool list. For a manual install that uses the default anonymous configuration, keep the existing server name and change its URL to `https://mcp.parallel.ai/mcp`. If the connection uses credentials or custom search settings, follow the [migration guide](https://docs.parallel.ai/integrations/mcp/quickstart#migration-from-the-search-mcp-and-task-mcp) before changing the URL.
+Update the package in your client and start a fresh session to refresh the tool list. For a manual install using default anonymous settings, keep the existing server name. If it still uses the old Search MCP URL, update that entry's URL to `https://mcp.parallel.ai/mcp`. Preserve connections with credentials or custom settings. To migrate one of those connections, follow the [migration guide](https://docs.parallel.ai/integrations/mcp/quickstart#migration-from-the-search-mcp-and-task-mcp).
 
 ## Try it
 

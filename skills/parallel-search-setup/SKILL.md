@@ -86,7 +86,7 @@ will change, and never touch unrelated MCP servers.
 | Symptom | Cause | Fix |
 | --- | --- | --- |
 | HTTP 429 | Free-tier rate limit reached | Wait and retry, reduce query volume, or move to an authenticated Parallel account (see above) |
-| HTTP 401 | The connection may be using an endpoint or settings that require authentication | For anonymous use, check for the bare `https://mcp.parallel.ai/mcp` URL and remove any custom override header |
+| HTTP 401 | The connection may be using an endpoint or settings that require authentication | Connect anonymously to the bare `https://mcp.parallel.ai/mcp` URL without override headers. Keep custom settings on a separate authenticated connection. |
 | Tools not listed | Package disabled, server disconnected, or session started before enablement | Check the client's MCP status. In Hermes, run `hermes plugins enable parallel-search` and start a new session; in clients with connector settings, enable Parallel Search for the chat |
 | Duplicate tools | The package and a manual connection expose some of the same tools | Verify the connection you want to use, then disable the duplicate anonymous package or default anonymous entry. Preserve authenticated and custom connections. |
 | Empty or irrelevant results | Query too narrow or too long | Rewrite as two or three shorter queries and pass them together in one call |
