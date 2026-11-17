@@ -104,7 +104,7 @@ Select HTTP or Streamable HTTP if your client asks for a transport. Follow the [
 
 ## Upgrade an existing install
 
-Update the package in your client and start a fresh session to refresh the tool list. For a manual install, keep the existing server name and update its URL. If the old connection uses OAuth or custom search settings, see the [migration guide](https://docs.parallel.ai/integrations/mcp/quickstart#migration-from-the-search-mcp-and-task-mcp).
+Update the package in your client and start a fresh session to refresh the tool list. For a manual install that uses the default anonymous configuration, keep the existing server name and change its URL to `https://mcp.parallel.ai/mcp`. If the connection uses credentials or custom search settings, follow the [migration guide](https://docs.parallel.ai/integrations/mcp/quickstart#migration-from-the-search-mcp-and-task-mcp) before changing the URL.
 
 ## Try it
 
@@ -132,7 +132,7 @@ The server also offers Decisions and other tools on the [default tool list](http
 
 This plugin connects without an account, API key, or login. The free tier is rate limited and is intended for personal agents, hobby projects, and exploration.
 
-For higher limits, Research, or [custom settings](https://docs.parallel.ai/integrations/mcp/quickstart#configuration), create an account at [platform.parallel.ai](https://platform.parallel.ai) and follow the [sign-in instructions for your client](https://docs.parallel.ai/integrations/mcp/installation). Authenticated usage is billed to your Parallel account after any included usage. Once your signed-in connection works, disable the anonymous package if your client lists duplicate tools.
+For higher limits, Research, or [custom settings](https://docs.parallel.ai/integrations/mcp/quickstart#configuration), create an account at [platform.parallel.ai](https://platform.parallel.ai) and add a separate connection under an unused server name. Follow the [OAuth or API key instructions](https://docs.parallel.ai/integrations/mcp/quickstart#authentication) and use the [installation guide](https://docs.parallel.ai/integrations/mcp/installation) for your client's configuration format. Authenticated usage is billed to your Parallel account after any included usage. Once the new connection works, disable the anonymous package if your client lists duplicate tools.
 
 ## Privacy and terms
 
